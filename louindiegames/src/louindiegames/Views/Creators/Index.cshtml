@@ -1,0 +1,32 @@
+@model IEnumerable<louindiegames.Models.Creator>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatorName)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatorName)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.CreatorID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.CreatorID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.CreatorID">Delete</a>
+        </td>
+    </tr>
+}
+</table>
