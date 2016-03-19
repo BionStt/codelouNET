@@ -20,12 +20,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            @Html.ActionLink(item.Title, "Details", "Creators", new { id = item.CreatorID }, new object {} )
         </td>
         <td>
+            @Html.ActionLink(@item.Creator.CreatorName,  "Details", "Creators", new { id = item.CreatorID}, new object {} ) |
             <a asp-action="Edit" asp-route-id="@item.GameID">Edit</a> |
             <a asp-action="Details" asp-route-id="@item.GameID">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.GameID">Delete</a>
+           <!-- <a asp-action="Delete" asp-route-id="@item.GameID">Delete</a> -->
         </td>
     </tr>
 }

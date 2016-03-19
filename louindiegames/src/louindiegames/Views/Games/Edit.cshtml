@@ -18,6 +18,32 @@
                 <span asp-validation-for="Title" class="text-danger" />
             </div>
         </div>
+        <input asp-for="GameID" type="hidden" value="@Model.GameID" />
+        <div class="col-md-10">
+            <select asp-for="CreatorID" class="form-control">
+                @foreach (SelectListItem s in (SelectList)ViewData["CreatorID"])
+                {
+                    <option value="@s.Value">@s.Text</option>
+                 }
+            </select>
+        </div>
+
+
+       <!-- <div class="form-group">
+            <label asp-for="Creator" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Creator" class="form-control" />
+                <span asp-validation-for="Creator" class="text-danger" />
+            </div>
+        </div> -->
+        <div class="form-group">
+            <label asp-for="Screenshot" class="col-md-2 control-label"></label>
+            <span>Please insert the address to a PNG image.</span>
+            <div class="col-md-10">
+                <input asp-for="Screenshot" class="form-control" />
+                <span asp-validation-for="Screenshot" class="text-danger" />
+            </div>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

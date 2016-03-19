@@ -74,7 +74,10 @@ namespace louindiegames.Controllers
             {
                 return HttpNotFound();
             }
-            ViewData["CreatorID"] = new SelectList(_context.Set<Creator>(), "CreatorID", "Creator", game.CreatorID);
+            // for dropdown
+            object s = new SelectList(_context.Set<Creator>(), "CreatorID", "CreatorName", game.CreatorID);
+            s.ToString();
+            ViewData["CreatorID"] = new SelectList(_context.Set<Creator>(), "CreatorID", "CreatorName", game.CreatorID);
             return View(game);
         }
 
@@ -85,6 +88,15 @@ namespace louindiegames.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                //query creator table
+                //have a match
+                game.CreatorID = 1;
+
+                //no match
+                _context.Creator.Add(new Creator { CreatorName = "name" });
+
+
                 _context.Update(game);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -121,5 +133,6 @@ namespace louindiegames.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
     }
 }

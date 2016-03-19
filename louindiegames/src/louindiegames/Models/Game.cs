@@ -14,6 +14,8 @@ namespace louindiegames.Models
         [Required]
         public string Title { get; set; }
 
+        public string Screenshot { get; set; }
+
         // How to get/set an image?
 
         [ScaffoldColumn(false)]

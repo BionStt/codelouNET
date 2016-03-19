@@ -17,6 +17,22 @@
             @Html.DisplayFor(model => model.Title)
         </dd>
     </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Creator)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Creator)
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Creator)
+        </dt>
+        <dd>
+          <img src="@Model.Screenshot" alt="" />  
+        </dd>
+    </dl>
 </div>
 <p>
     <a asp-action="Edit" asp-route-id="@Model.GameID">Edit</a> |
