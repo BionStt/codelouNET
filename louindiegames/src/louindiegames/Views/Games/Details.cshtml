@@ -23,11 +23,13 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Creator)
+            @Html.DisplayNameFor(model => model.CreatorName )
+           @* @Html.ActionLink(@model => Creator.CreatorName, "Details", "Creators", new { id =  }, new object { }) *@
         </dd>
     </dl>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Creator)
+            @Html.DisplayNameFor(model => model.Screenshot)
         </dt>
         <dd>
           <img src="@Model.Screenshot" alt="" />  
