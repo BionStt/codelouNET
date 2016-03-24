@@ -21,8 +21,3 @@ Things I'm Working On:
 -Adding Reviews
 -User Roles and Restrictions
 -Custom Graphics
-
-Things I broke... T_T
-- View Model
-- {"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Review_Game_GameID\". The conflict occurred in database \"aspnet5-louindiegames-35ff722a-6ab1-4bf4-a040-dda546637e92\", table \"dbo.Game\", column 'GameID'.\r\nThe statement has been terminated."}
-
