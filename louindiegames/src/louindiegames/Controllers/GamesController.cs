@@ -54,6 +54,7 @@ namespace louindiegames.Controllers
         {
             if (ModelState.IsValid)
             {
+                game.CreatorID = 1;
                 _context.Game.Add(game);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
