@@ -53,6 +53,8 @@ namespace louindiegames.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                review.ReviewID = 1;
                 _context.Review.Add(review);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -85,8 +87,10 @@ namespace louindiegames.Controllers
         {
             if (ModelState.IsValid)
             {
-                //ali added this line here bc reasons
+                //added this line here bc reasons
                 review.ReviewID = 1;
+                // no match
+                _context.Review.Add( new Review { ReviewTitle = "Review Title" });
                 _context.Update(review);
                 _context.SaveChanges();
                 return RedirectToAction("Index");

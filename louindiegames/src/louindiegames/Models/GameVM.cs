@@ -12,5 +12,6 @@ namespace louindiegames.Models
 
         public Creator creator { get; set; }
 
+        public Review review { get; set; }
     }
 }

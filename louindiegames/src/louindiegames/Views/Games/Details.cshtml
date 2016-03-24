@@ -1,5 +1,6 @@
 @model louindiegames.Models.Game
 
+
 @{
     ViewData["Title"] = "Details";
 }
@@ -37,8 +38,17 @@
     </dl>
     <dl class="dl-horizontal">
         <dt>Reviews</dt>
-        <dd>// reviews will go here //
+        <dd><!-- Reviews Posted (somehow here) -->
         
+
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt> Write Your Own Review </dt>
+        <dd>
+            <!--Script for Reviews/ Create -->
+          
+
 
         </dd>
     </dl>
@@ -54,4 +64,10 @@
     <script src="~/signalr/hubs"></script>
     <script src="~/Scripts/knockout-3.1.0.js"></script>
     <script src="~/Scripts/board.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
 }

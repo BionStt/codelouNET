@@ -9,6 +9,6 @@ namespace louindiegames.ViewModels
     {
         public IEnumerable<louindiegames.Models.Game> Games { get; set; }
         public IEnumerable<louindiegames.Models.Creator>  Creators { get; set; }
-
+        public IEnumerable<louindiegames.Models.Review> Reviews { get; set; }
     }
 }

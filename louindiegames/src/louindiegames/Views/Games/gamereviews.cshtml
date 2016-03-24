@@ -1,0 +1,104 @@
+﻿@model louindiegames.Models.GameVM
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Game</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Title
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.game.Title)
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            Creator
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.creator.CreatorName)
+
+            @* @Html.ActionLink(@model => Creator.CreatorName, "Details", "Creators", new { id =  }, new object { }) *@
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            Screenshot
+        </dt>
+        <dd>
+            <img src="@Model.game.Screenshot" alt="" height="500" width="500" />
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>Reviews</dt>
+        <dd>
+            <!-- Reviews Posted (somehow here) -->
+
+
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt> Write Your Own Review </dt>
+        <dd>
+            <!--Script for Reviews/ Create -->
+            <form asp-action="Create">
+                <div class="form-horizontal">
+                    <h4>Review</h4>
+                    <hr />
+                    <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+
+
+                    <div class="form-group">
+                        <label asp-for="review.ReviewTitle" class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+                            <input asp-for="review.ReviewTitle" class="form-control" />
+                            <span asp-validation-for="review.ReviewTitle" class="text-danger" />
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="review.ReviewContent" class="col-md-2 control-label"></label>
+                            <div class="col-md-10">
+                                <input asp-for="review.ReviewContent" class="form-control" />
+                                <span asp-validation-for="review.ReviewContent" class="text-danger" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.game.GameID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>
+
+@section scripts {
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/knockout-3.1.0.js"></script>
+    <script src="~/Scripts/board.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+}
