@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            Title
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Title)
@@ -19,20 +19,27 @@
     </dl>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Creator)
+            Creator
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Creator)
-            @Html.DisplayNameFor(model => model.CreatorName )
+            @Html.DisplayFor(model => model.Creator.CreatorName)
+         
            @* @Html.ActionLink(@model => Creator.CreatorName, "Details", "Creators", new { id =  }, new object { }) *@
         </dd>
     </dl>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Screenshot)
+            Screenshot
         </dt>
         <dd>
-          <img src="@Model.Screenshot" alt="" />  
+          <img src="@Model.Screenshot" alt="" height="500" width="500" />  
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>Reviews</dt>
+        <dd>// reviews will go here //
+        
+
         </dd>
     </dl>
 </div>
@@ -40,3 +47,11 @@
     <a asp-action="Edit" asp-route-id="@Model.GameID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </p>
+
+@section scripts {
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/knockout-3.1.0.js"></script>
+    <script src="~/Scripts/board.js"></script>
+}

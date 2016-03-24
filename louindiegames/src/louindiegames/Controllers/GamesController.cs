@@ -30,7 +30,8 @@ namespace louindiegames.Controllers
                 return HttpNotFound();
             }
 
-            Game game = _context.Game.Single(m => m.GameID == id);
+            var applicationDbContext = _context.Game.Include(g => g.Creator);
+            Game game = applicationDbContext.Single(m => m.GameID == id);
             if (game == null)
             {
                 return HttpNotFound();

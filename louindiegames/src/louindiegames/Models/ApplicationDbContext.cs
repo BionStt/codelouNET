@@ -19,5 +19,7 @@ namespace louindiegames.Models
         }
         public DbSet<Game> Game { get; set; }
         public DbSet<Creator> Creator { get; set; }
+        public DbSet<Review> Review { get; set; }
+        //public object Review { get; internal set; }
     }
 }

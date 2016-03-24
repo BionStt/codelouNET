@@ -8,7 +8,7 @@ namespace louindiegames.ViewModels
     public class ViewModel
     {
         public IEnumerable<louindiegames.Models.Game> Games { get; set; }
-        public IEnumerable<louindiegames.Models.Creator>  Creators { get; set }
+        public IEnumerable<louindiegames.Models.Creator>  Creators { get; set; }
 
     }
 }
